@@ -2,7 +2,7 @@
 
 # Link to home directory
 dotfiles_dir=$(dirname "$0":A)
-ln -s "$dotfiles_dir/.config/zsh/.zshenv" "$HOME/.zshenv"
+ln -s "$dotfiles_dir/.zshenv" "$HOME/.zshenv"
 ln -s "$dotfiles_dir/.config" "$HOME/.config"
 
 # Set shell to zsh if not already
