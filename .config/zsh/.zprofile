@@ -1,5 +1,7 @@
 # Add Homebrew to PATH
-export PATH="/opt/homebrew/bin:$PATH"
+if [[ $(uname) == "Darwin" && $(uname -m) == "arm64" ]]; then
+	export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 # Clean up home directory (dev tools)
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"

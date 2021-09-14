@@ -3,3 +3,7 @@
 
 # IDEs
 .idea/
+
+# Local config ignorelist
+#   Add paths to this file to prevent local configs being pushed upstream
+.config/.gitignore

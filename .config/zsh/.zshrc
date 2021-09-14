@@ -38,10 +38,6 @@ export KEYTIMEOUT=1
 # Use neovim, if present
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
-# Add some color
-alias grep="grep --color=auto"
-alias diff="diff --color=auto"
-
 # Add verbose output
 alias cp="cp -iv"
 alias mv="mv -iv"
@@ -57,13 +53,17 @@ export EDITOR="vim"
 # Application aliases
 app="/Applications"
 if [[ $(uname) == "Darwin" ]]; then
-	intellij() {
-		open -na "IntelliJ IDEA CE.app" --args "$@"
+	launch_app() {
+		open -na $1 --args "${@:2}"
 	}
-	[ -d "$app/IntelliJ IDEA CE.app" ] && alias idea=intellij
+
+	[ -d "$app/IntelliJ IDEA CE.app" ] && alias idea='launch_app "IntelliJ IDEA CE.app"'
+	[ -d "$app/IntelliJ IDEA.app" ] && alias idea='launch_app "IntelliJ IDEA.app"'
 fi
 unset app
 
+# Load local-only .zshrc
+source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
 
 # PROMPT
 #####################
