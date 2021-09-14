@@ -63,7 +63,7 @@ fi
 unset app
 
 # Load local-only .zshrc
-source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
+[[ -f "$XDG_CONFIG_HOME/zsh/.zshrc.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
 
 # PROMPT
 #####################
