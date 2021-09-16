@@ -9,6 +9,10 @@ ln -s "$dotfiles_dir/.config" "$HOME/.config"
 if [[ "$SHELL" != *zsh ]]; then
 	echo "Setting shell to zsh..."
 	chsh -s /bin/zsh
+	echo "You may have to log out and back in again for your shell change to take effect"
 fi
 
-echo "You're all set. Please reload your terminal for changes to effect."
+echo "You're all set!"
+
+# Restart shell
+exec zsh --login
