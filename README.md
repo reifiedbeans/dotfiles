@@ -16,7 +16,7 @@ brew install starship
 
 First, checkout the repository, including all the submodules.
 ```bash
-git clone --recurse-submodules https://github.com/drewdavis21/dotfiles .dotfiles
+git clone --recurse-submodules https://github.com/bointer/dotfiles .dotfiles
 ```
 
 I like to clone my dotfiles into a directory called `.dotfiles`. Next, invoke the setup script.
@@ -40,5 +40,5 @@ These dotfiles are licensed under the [MIT License](LICENSE) so that others can 
 [starship]: https://starship.rs
 [homebrew]: https://brew.sh
 [symlinks-wikipedia]: https://en.wikipedia.org/wiki/Symbolic_link#POSIX_and_Unix-like_operating_systems
-[zshrc-local]: https://github.com/drewdavis21/dotfiles/blob/1571c001b591b5513e62fc759a8a0d8d99a5dc69/.config/zsh/.zshrc#L66
-[fork-me]: https://github.com/drewdavis21/dotfiles/fork
+[zshrc-local]: https://github.com/bointer/dotfiles/blob/1571c001b591b5513e62fc759a8a0d8d99a5dc69/.config/zsh/.zshrc#L66
+[fork-me]: https://github.com/bointer/dotfiles/fork
