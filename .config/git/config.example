@@ -1,12 +1,15 @@
 [user]
-	name	= $user_name
-	email	= $user_email
+	name = $user_name
+	email = $user_email
+
+[pull]
+	rebase = true
 
 [alias]
-	new	= !git init && git symbolic-ref HEAD refs/heads/main
-	nb	= !git checkout -b
-	db	= !git branch -d
-	co	= !git checkout
+	nb = switch -c
+	db = branch -d
+	co = checkout
+	new = !git init && git symbolic-ref HEAD refs/heads/main
 
 [init]
-	defaultBranch	= main
+	defaultBranch = main
