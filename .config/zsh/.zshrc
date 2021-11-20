@@ -6,7 +6,7 @@
 #####################
 
 # Path for oh-my-zsh installation
-export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Clean up home dir further (interactive only)
 ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
@@ -64,6 +64,7 @@ unset app
 
 # Load local-only .zshrc
 [[ -f "$XDG_CONFIG_HOME/zsh/.zshrc.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
+
 
 # PROMPT
 #####################
