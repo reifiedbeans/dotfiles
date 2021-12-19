@@ -6,10 +6,5 @@ export XDG_CACHE_HOME="$HOME/.cache"
 [ -d "$XDG_CACHE_HOME" ] || mkdir -p "$XDG_CACHE_HOME"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-# Add Homebrew to PATH (Apple Silicon)
-if [[ $(uname) == "Darwin" && $(uname -m) == "arm64" ]]; then
-	export PATH="/opt/homebrew/bin:$PATH"
-fi
-
 # Disable .zsh_sessions in macOS
 SHELL_SESSIONS_DISABLE=1

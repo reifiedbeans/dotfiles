@@ -16,7 +16,7 @@ ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
 HISTFILE="$XDG_CACHE_HOME/zsh/history"
 [ -f "$HISTFILE" ] || ( mkdir -p "$XDG_CACHE_HOME/zsh"; touch "$HISTFILE" )
 
-LESSHISTFILE=-
+export LESSHISTFILE=-
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -30,6 +30,11 @@ source $ZSH/oh-my-zsh.sh
 
 # CONFIGURATION
 #####################
+
+# Add Homebrew to PATH (Apple Silicon)
+if [[ -x '/opt/homebrew/bin/brew' ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Enable vim mode
 bindkey -v
@@ -72,6 +77,7 @@ unset app
 # Ruby
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
 if command -v rbenv >/dev/null; then
 	export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
 	[ -d "$RBENV_ROOT" ] || mkdir -p "$RBENV_ROOT"
