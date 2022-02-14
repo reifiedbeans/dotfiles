@@ -99,5 +99,5 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 # PROMPT
 #####################
 
-# Start Starship shell (https://github.com/starship/starship)
+# Start Starship prompt (https://github.com/starship/starship)
 command -v starship >/dev/null && eval "$(starship init zsh)"
