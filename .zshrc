@@ -10,10 +10,9 @@ export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 
 # Clean up home dir further (interactive only)
 ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
-[ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
-
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
 HISTFILE="$XDG_CACHE_HOME/zsh/history"
+[ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
 [ -f "$HISTFILE" ] || ( mkdir -p "$XDG_CACHE_HOME/zsh"; touch "$HISTFILE" )
 
 export LESSHISTFILE=-
@@ -25,7 +24,11 @@ export LESSHISTFILE=-
 plugins=()
 
 # Start oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+if [[ -d "$ZSH" ]]; then
+	source "$ZSH/oh-my-zsh.sh"
+else
+	echo "Could not find oh-my-zsh at $ZSH. Consider cloning it for the best experience."
+fi
 
 
 # CONFIGURATION
@@ -59,7 +62,7 @@ export EDITOR="vim"
 app="/Applications"
 if [[ $(uname) == "Darwin" ]]; then
 	launch_app() {
-		open -na $1 --args "${@:2}"
+		open -na "$1" --args "${@:2}"
 	}
 
 	[ -d "$app/IntelliJ IDEA CE.app" ] && alias idea='launch_app "IntelliJ IDEA CE.app"'
@@ -100,4 +103,8 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 #####################
 
 # Start Starship prompt (https://github.com/starship/starship)
-command -v starship >/dev/null && eval "$(starship init zsh)"
+if command -v starship >/dev/null; then
+	eval "$(starship init zsh)"
+else
+	echo 'starship prompt is not installed. Consider installing it for the best experience.'
+fi
