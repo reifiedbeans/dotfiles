@@ -1,0 +1,11 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+
+brew "node"
+brew "openjdk"
+
+cask "discord"
+cask "hey"
+cask "intellij-idea-ce"
+cask "notion"

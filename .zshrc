@@ -68,7 +68,7 @@ fi
 unset app
 
 # Load local-only .zshrc
-[[ -f "$XDG_CONFIG_HOME/zsh/.zshrc.local" ]] && source "$XDG_CONFIG_HOME/zsh/.zshrc.local"
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 
 # DEV TOOLS

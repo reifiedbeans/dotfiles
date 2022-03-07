@@ -1,0 +1,3 @@
+# Generated files
+bootstrap.d/05-install-packages
+bootstrap.d/06-create-ssh-key

@@ -1,0 +1,7 @@
+#! /bin/zsh
+
+set -e
+
+# Remove files that we don't need anymore
+rm -rf "$HOME/.zsh_sessions" '.profile'
+find "$HOME" -name '.bash*' -maxdepth 1 -exec rm -rf {} \;
