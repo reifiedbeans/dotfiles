@@ -33,7 +33,44 @@ HISTFILE="$ZSH_CACHE_DIR/history"
 [ -d "$HISTFILE" ] || touch "$HISTFILE"
 
 
-# OH-MY-ZSH SETUP
+# CONFIGURATION
+#####################
+
+# Add Homebrew to PATH (Apple Silicon)
+if [[ -x '/opt/homebrew/bin/brew' ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Use neovim, if present
+command -v 'nvim' > '/dev/null' && alias vim='nvim' vimdiff='nvim -d'
+
+# Add verbose output
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -v'
+alias mkdir='mkdir -pv'
+
+# Setup GPG tty
+export GPG_TTY="$TTY"
+
+# Default programs
+export EDITOR='vim'
+
+# Application aliases
+if [[ "$(uname)" == 'Darwin' ]]; then
+	launch-app() {
+		open -na "$1" --args "${@:2}"
+	}
+
+	[ -d '/Applications/IntelliJ IDEA CE.app' ] && alias idea='launch-app "IntelliJ IDEA CE.app"'
+	[ -d '/Applications/IntelliJ IDEA.app' ] && alias idea='launch-app "IntelliJ IDEA.app"'
+fi
+
+# Load local-only .zshrc
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+
+# OH-MY-ZSH
 #####################
 
 # Path for oh-my-zsh installation
@@ -43,7 +80,7 @@ export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # oh-my-zsh plugins
-plugins=(asdf)
+plugins=('asdf' 'vi-mode')
 
 # Start oh-my-zsh
 if [[ -d "$ZSH" ]]; then
@@ -53,52 +90,11 @@ else
 fi
 
 
-# CONFIGURATION
-#####################
-
-# Add Homebrew to PATH (Apple Silicon)
-if [[ -x '/opt/homebrew/bin/brew' ]]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-# Enable vim mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use neovim, if present
-command -v nvim > /dev/null && alias vim="nvim" vimdiff="nvim -d"
-
-# Add verbose output
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias rm="rm -v"
-alias mkdir="mkdir -pv"
-
-# Setup GPG tty
-export GPG_TTY=$TTY
-
-# Default programs
-export EDITOR="vim"
-
-# Application aliases
-if [[ $(uname) == "Darwin" ]]; then
-	launch-app() {
-		open -na "$1" --args "${@:2}"
-	}
-
-	[ -d "/Applications/IntelliJ IDEA CE.app" ] && alias idea='launch-app "IntelliJ IDEA CE.app"'
-	[ -d "/Applications/IntelliJ IDEA.app" ] && alias idea='launch-app "IntelliJ IDEA.app"'
-fi
-
-# Load local-only .zshrc
-[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
-
 # PROMPT
 #####################
 
 # Start Starship prompt (https://github.com/starship/starship)
-if command -v starship > /dev/null; then
+if command -v 'starship' > '/dev/null'; then
 	eval "$(starship init zsh)"
 else
 	echo 'starship prompt is not installed. Consider installing it for the best experience.'
