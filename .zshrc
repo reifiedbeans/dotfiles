@@ -23,10 +23,11 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
 
 # ruby
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
 export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
 
 # zsh
-ZSH_CACHE_DIR="$XDG_CACHE_HOME/oh-my-zsh"
+ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdump"
 HISTFILE="$ZSH_CACHE_DIR/history"
 [ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
