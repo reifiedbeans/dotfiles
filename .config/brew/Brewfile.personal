@@ -2,8 +2,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 
-brew "openjdk"
-
 cask "discord"
 cask "hey"
 cask "intellij-idea-ce"

@@ -14,7 +14,7 @@ brew "trash"
 brew "tree"
 brew "yadm"
 
-cask "aerial"
+cask "corretto"
 cask "font-jetbrains-mono"
 cask "iterm2"
 cask "raycast"
