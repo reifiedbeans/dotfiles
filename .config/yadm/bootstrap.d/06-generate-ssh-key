@@ -6,7 +6,7 @@ key_path="$HOME/.ssh/id_rsa"
 
 echo 'Generating ssh key...'
 if [[ ! -f "$key_path" ]]; then
-	ssh-keygen -t rsa -b 4096 -C "$(whoami)@$(hostname)" -N '' -f "$key_path"
+	ssh-keygen -t rsa -b 4096 -N '' -f "$key_path"
 	echo 'Successfully generated ssh key.'
 else
 	echo "SSH key $key_path already exists. Skipping..."
