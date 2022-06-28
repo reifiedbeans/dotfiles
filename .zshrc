@@ -45,6 +45,9 @@ if [[ -x '/opt/homebrew/bin/brew' ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Add completions from Homebrew packages
+FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+
 # Use neovim, if present
 command -v 'nvim' > '/dev/null' && alias vim='nvim' vimdiff='nvim -d'
 
