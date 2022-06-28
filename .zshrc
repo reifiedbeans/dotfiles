@@ -12,6 +12,9 @@ export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 # go
 export GOPATH="$XDG_DATA_HOME/go"
 
+# gradle
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
 # less
 export LESSHISTFILE=-
 
