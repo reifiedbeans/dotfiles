@@ -4,5 +4,4 @@ tap "homebrew/core"
 
 cask "discord"
 cask "hey"
-cask "intellij-idea-ce"
 cask "notion"

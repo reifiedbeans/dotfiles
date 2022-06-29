@@ -17,6 +17,7 @@ brew "tree"
 brew "yadm"
 
 cask "font-jetbrains-mono"
+cask "intellij-idea"
 cask "iterm2"
 cask "raycast"
 cask "visual-studio-code"
