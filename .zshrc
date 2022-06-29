@@ -46,7 +46,9 @@ if [[ -x '/opt/homebrew/bin/brew' ]]; then
 fi
 
 # Add completions from Homebrew packages
-FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+if [[ "$(uname)" == 'Darwin' ]]; then
+	FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+fi
 
 # Use neovim, if present
 command -v 'nvim' > '/dev/null' && alias vim='nvim' vimdiff='nvim -d'
