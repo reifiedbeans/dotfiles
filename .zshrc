@@ -19,6 +19,7 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export LESSHISTFILE=-
 
 # node
+export NODE_REPL_HISTORY=''
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
 # python
@@ -28,6 +29,9 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
 export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
 export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
+
+# rust
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 # zsh
 ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
@@ -58,9 +62,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -v'
 alias mkdir='mkdir -pv'
-
-# Setup GPG tty
-export GPG_TTY="$TTY"
 
 # Default programs
 export EDITOR='vim'
