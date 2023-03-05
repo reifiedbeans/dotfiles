@@ -1,4 +1,4 @@
-colorscheme zellner
+colorscheme habamax
 set number
 set hlsearch
 
