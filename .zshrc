@@ -5,10 +5,6 @@
 # HOME DIR CLEANUP
 #####################
 
-# asdf
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
-export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
-
 # go
 export GOPATH="$XDG_DATA_HOME/go"
 
@@ -20,7 +16,8 @@ export LESSHISTFILE=-
 
 # node
 export NODE_REPL_HISTORY=''
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export TS_NODE_HISTORY='/dev/null'
 
 # python
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
@@ -76,6 +73,9 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 	[ -d '/Applications/IntelliJ IDEA.app' ] && alias idea='launch-app "IntelliJ IDEA.app"'
 fi
 
+# Load rtx
+command -v 'rtx' > '/dev/null' && eval "$(rtx activate zsh)"
+
 # Load local-only .zshrc
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
@@ -90,7 +90,7 @@ export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # oh-my-zsh plugins
-plugins=('asdf' 'vi-mode')
+plugins=('vi-mode')
 
 # Start oh-my-zsh
 if [[ -d "$ZSH" ]]; then
