@@ -1,9 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/core"
-
 brew "asdf"
 brew "go"
 brew "neofetch"
@@ -15,7 +9,5 @@ brew "tree"
 brew "yadm"
 
 cask "corretto"
-cask "font-jetbrains-mono"
 cask "intellij-idea"
-cask "iterm2"
 cask "raycast"
