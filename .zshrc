@@ -5,6 +5,9 @@
 # HOME DIR CLEANUP
 #####################
 
+# cdk
+export CDK_HOME="$XDG_DATA_HOME/cdk"
+
 # go
 export GOPATH="$XDG_DATA_HOME/go"
 
