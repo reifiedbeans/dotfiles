@@ -1,5 +1,6 @@
 brew "neofetch"
 brew "neovim"
+brew "pnpm"
 brew "rtx"
 brew "sl"
 brew "starship"

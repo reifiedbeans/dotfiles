@@ -2,6 +2,7 @@
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 export YADM_DIR="$XDG_CONFIG_HOME/yadm"
 export YADM_DATA="$XDG_DATA_HOME/yadm"
 [ -d "$XDG_CACHE_HOME" ] || mkdir -p "$XDG_CACHE_HOME"

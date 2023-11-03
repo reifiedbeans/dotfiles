@@ -19,8 +19,14 @@ export LESSHISTFILE=-
 
 # node
 export NODE_REPL_HISTORY=''
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export TS_NODE_HISTORY='/dev/null'
+
+# npm
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+
+# pnpm
+export PNPM_HOME="/Users/drew/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 # python
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
