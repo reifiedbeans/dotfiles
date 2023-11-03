@@ -1,8 +1,8 @@
-[include]
-	path = config.local
-
 [pull]
 	rebase = true
+
+[push]
+	autoSetupRemote = true
 
 [alias]
 	co = checkout
@@ -11,5 +11,9 @@
 	db = branch -d
 	dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
 	recommit = "! GIT_COMMITTER_DATE=\"$(date)\" git commit --amend --date=\"$(date)\""
+
 [init]
 	defaultBranch = main
+
+[include]
+	path = config.local
