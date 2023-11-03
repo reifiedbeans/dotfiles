@@ -1,3 +1,4 @@
+brew "jq"
 brew "neofetch"
 brew "neovim"
 brew "pnpm"
