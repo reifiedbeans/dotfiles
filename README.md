@@ -29,7 +29,7 @@ After cloning the dotfiles, you will be asked if you want to execute the bootstr
 - Installs [Homebrew][homebrew]
 - Installs formulae and casks from Homebrew using my [Brewfiles][brewfiles]
   - This includes the [starship][starship] prompt
-- Generates an SSH key at `~/.ssh/id_rsa`
+- Generates an SSH key at `~/.ssh/id_ed25519`
 
 These bootstrapping scripts are idempotent, so you can re-run the bootstrapping step if need be:
 
