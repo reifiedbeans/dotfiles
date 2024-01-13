@@ -82,8 +82,8 @@ if [[ "$(uname)" == 'Darwin' ]]; then
 	[ -d '/Applications/IntelliJ IDEA.app' ] && alias idea='launch-app "IntelliJ IDEA.app"'
 fi
 
-# Load rtx
-command -v 'rtx' > '/dev/null' && eval "$(rtx activate zsh)"
+# Load mise
+command -v 'mise' > '/dev/null' && eval "$(mise activate zsh)"
 
 # Load local-only .zshrc
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
