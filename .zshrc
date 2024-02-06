@@ -5,8 +5,15 @@
 # HOME DIR CLEANUP
 #####################
 
+# aws
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+
 # cdk
 export CDK_HOME="$XDG_DATA_HOME/cdk"
+
+# docker
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
 # go
 export GOPATH="$XDG_DATA_HOME/go"
@@ -23,6 +30,7 @@ export TS_NODE_HISTORY='/dev/null'
 
 # npm
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export NPM_CONFIG_LOGS_DIR="$XDG_STATE_HOME/npm/logs"
 
 # pnpm
 export PNPM_HOME="/Users/drew/.local/share/pnpm"
