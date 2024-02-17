@@ -33,7 +33,7 @@ export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_LOGS_DIR="$XDG_STATE_HOME/npm/logs"
 
 # pnpm
-export PNPM_HOME="/Users/drew/.local/share/pnpm"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # python
