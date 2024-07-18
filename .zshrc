@@ -2,71 +2,15 @@
 # ZSH CONFIGURATION #
 #####################
 
-# HOME DIR CLEANUP
-#####################
-
-# aws
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
-
-# cdk
-export CDK_HOME="$XDG_DATA_HOME/cdk"
-
-# docker
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-
-# go
-export GOPATH="$XDG_DATA_HOME/go"
-
-# gradle
-export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
-
-# less
-export LESSHISTFILE=-
-
-# node
-export NODE_REPL_HISTORY=''
-export TS_NODE_HISTORY='/dev/null'
-
-# npm
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export NPM_CONFIG_LOGS_DIR="$XDG_STATE_HOME/npm/logs"
-
-# pnpm
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# python
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
-
-# ruby
-export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
-export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
-export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
-
-# rust
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-
-# zsh
+# Set up zsh files
 ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdump"
 HISTFILE="$ZSH_CACHE_DIR/history"
 [ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
 [ -d "$HISTFILE" ] || touch "$HISTFILE"
 
-
-# CONFIGURATION
-#####################
-
-# Add Homebrew to PATH (Apple Silicon)
-if [[ -x '/opt/homebrew/bin/brew' ]]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-# Add completions from Homebrew packages
-if [[ "$(uname)" == 'Darwin' ]]; then
-	FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
-fi
+# Default programs
+export EDITOR='vim'
 
 # Use neovim, if present
 command -v 'nvim' > '/dev/null' && alias vim='nvim' vimdiff='nvim -d'
@@ -77,34 +21,8 @@ alias mv='mv -iv'
 alias rm='rm -v'
 alias mkdir='mkdir -pv'
 
-# Default programs
-export EDITOR='vim'
-
-# Application aliases
-if [[ "$(uname)" == 'Darwin' ]]; then
-	launch-app() {
-		open -na "$1" --args "${@:2}"
-	}
-
-	[ -d '/Applications/IntelliJ IDEA CE.app' ] && alias idea='launch-app "IntelliJ IDEA CE.app"'
-	[ -d '/Applications/IntelliJ IDEA.app' ] && alias idea='launch-app "IntelliJ IDEA.app"'
-fi
-
-# Load mise
-command -v 'mise' > '/dev/null' && eval "$(mise activate zsh)"
-
-# Load local-only .zshrc
-[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
-
-# OH-MY-ZSH
-#####################
-
 # Path for oh-my-zsh installation
 export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # oh-my-zsh plugins
 plugins=('vi-mode')
@@ -116,9 +34,13 @@ else
 	echo "Could not find oh-my-zsh at $ZSH. Consider cloning it for the best experience."
 fi
 
+# Add completions from Homebrew packages
+if command -v 'brew' > '/dev/null'; then
+	FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
+fi
 
-# PROMPT
-#####################
+# Load local-only .zshrc
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 # Start Starship prompt (https://github.com/starship/starship)
 if command -v 'starship' > '/dev/null'; then
