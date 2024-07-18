@@ -13,7 +13,10 @@ HISTFILE="$ZSH_CACHE_DIR/history"
 export EDITOR='vim'
 
 # Use neovim, if present
-command -v 'nvim' > '/dev/null' && alias vim='nvim' vimdiff='nvim -d'
+if command -v 'nvim' > '/dev/null'; then
+	alias vim='nvim' vimdiff='nvim -d'
+	export EDITOR='nvim'
+fi
 
 # Add verbose output
 alias cp='cp -iv'
