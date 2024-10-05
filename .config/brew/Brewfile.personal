@@ -1,4 +1,3 @@
 cask "cloudflare-warp"
 cask "discord"
 cask "ngrok"
-cask "warp"
