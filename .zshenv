@@ -75,7 +75,11 @@ if [[ -x '/opt/homebrew/bin/brew' ]]; then
 fi
 
 # Load mise
-command -v 'mise' > '/dev/null' && eval "$(mise activate zsh)"
+if command -v 'mise' > '/dev/null'; then
+	eval "$(mise activate zsh)"
+fi
 
 # Load local-only .zshenv
-[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
+if [[ -f "$HOME/.zshenv.local" ]]; then
+	source "$HOME/.zshenv.local"
+fi

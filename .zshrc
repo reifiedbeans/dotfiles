@@ -43,7 +43,9 @@ if command -v 'brew' > '/dev/null'; then
 fi
 
 # Load local-only .zshrc
-[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+if [[ -f "$HOME/.zshrc.local" ]]; then
+	source "$HOME/.zshrc.local"
+fi
 
 # Start Starship prompt (https://github.com/starship/starship)
 if command -v 'starship' > '/dev/null'; then
