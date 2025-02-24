@@ -1,3 +1,4 @@
+brew "fastfetch"
 brew "jq"
 brew "mise"
 brew "neovim"
