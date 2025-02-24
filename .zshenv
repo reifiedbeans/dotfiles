@@ -50,7 +50,7 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/.pythonrc"
 
 # ruby
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
-export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle/config"
 export IRBRC="$XDG_CONFIG_HOME/irb/irbrc"
 
 # rust
